@@ -1,5 +1,11 @@
 # DENE
 
+## Yeni: iPhone sesli asistanı
+
+Ana sayfa artık iPhone'a uygun Türkçe sesli sohbet ekranıdır. Sunucu tarafında Gemini bağlantısı, tarayıcıda konuşmayı yazıya çevirme ve sesli yanıt eklendi. Gerçek yanıt için sunucuda API anahtarı, telefondan erişim için HTTPS barındırma gerekir. Henüz canlı hizmete dağıtılmadı; gerçek iPhone testi ve canlı AI doğrulaması yapılmadı. [iPhone kurulum ve kullanım bilgileri](IOS_KURULUM.md).
+
+Önceki prototip aşağıda açıklanmaktadır; yerel çalışma masası `/desk` adresine taşındı. Open Yazılım entegrasyonu yeni sesli asistanın kapsamı dışındadır.
+
 # Acente yardımcısı — ilk prototip
 
 Windows üzerinde kullanılacak acente asistanının ilk çalışma masası. JARVIS arşivinden kod veya varlık kopyalanmadı; arşivde proje lisansı net olmadığı için bu prototip bağımsız yazıldı.

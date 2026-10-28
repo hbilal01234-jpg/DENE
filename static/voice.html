@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102e34">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Acente">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Acente · Sesli asistan</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/voice.css">
+</head>
+<body>
+<div class="shell">
+  <header><a class="brand" href="/" aria-label="Acente ana sayfa"><span class="brand-icon">a.</span> acente<span class="brand-light"> / asistan</span></a><button id="settings-open" class="icon-button" aria-label="Ayarları aç">⚙</button></header>
+  <main>
+    <div class="eyebrow"><span class="status-dot"></span><span id="connection">Bağlantı kontrol ediliyor</span></div>
+    <section class="hero" aria-labelledby="heading">
+      <span class="edition">SİZİNLE DÜŞÜNEN ASİSTAN</span>
+      <h1 id="heading">Bir soruyla<br>başlayalım.</h1>
+      <p>Sigortacılıkta aklınıza takılanları sorun.<br>Konuşarak veya yazarak.</p>
+      <div class="orb-wrap"><div id="orb" class="orb" aria-hidden="true"><span></span><span></span><span></span><div class="orb-core">a</div></div></div>
+      <p id="voice-state" class="voice-state" role="status">Hazır olduğunuzda mikrofona dokunun.</p>
+      <button id="mic" class="mic-button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg><span>Konuşmaya başla</span></button>
+      <p id="speech-help" class="subtle">Sesiniz tarayıcının konuşma hizmetiyle yazıya çevrilebilir.</p>
+    </section>
+    <section class="suggestions" aria-label="Örnek sorular"><button data-prompt="Kaskoda muafiyet nedir? Kısa ve örnekle anlat."><span>01</span> Kaskoda muafiyet nedir? <b>↗</b></button><button data-prompt="Trafik sigortası ve kasko arasındaki fark nedir?"><span>02</span> Trafik ve kasko farkı <b>↗</b></button><button data-prompt="Müşteriye poliçe yenileme için kısa ve nazik bir mesaj taslağı hazırla. Kişisel bilgi uydurma."><span>03</span> Yenileme mesajı hazırla <b>↗</b></button></section>
+    <section id="conversation" aria-label="Sohbet" aria-live="polite" aria-relevant="additions"></section>
+    <div id="reply-actions" hidden><button id="read-reply" class="text-button">▶ Yanıtı sesli dinle</button><button id="stop-speech" class="text-button">■ Sesi durdur</button></div>
+    <p id="error" role="alert"></p>
+    <form id="chat-form" class="composer"><label class="sr-only" for="message">Mesajınız</label><textarea id="message" rows="1" maxlength="4000" placeholder="Asistanınıza bir şey sorun…" required></textarea><button id="send" aria-label="Mesajı gönder">↑</button></form>
+    <div class="below-composer"><span>Yapay zekâ yanılabilir. Poliçe şartlarını doğrulayın.</span><button id="clear" class="text-button">Yeni sohbet</button></div>
+    <footer>İlk sürüm · Sohbet sunucuda kaydedilmez. Gönderdiğiniz metin yapay zekâ sağlayıcısıyla paylaşılır. Gerçek müşteri bilgisi paylaşmayın.</footer>
+  </main>
+</div>
+<dialog id="settings"><form method="dialog"><div class="dialog-head"><h2>Asistan ayarları</h2><button class="icon-button" aria-label="Ayarları kapat">×</button></div><p id="setup-help">Bağlantı kontrol ediliyor.</p><label>Erişim kodu<input type="password" id="access-code" autocomplete="off" placeholder="Yöneticinizin verdiği kod"></label><p class="subtle">Bu kod yalnızca açık sekmenin belleğinde tutulur. API anahtarını buraya yazmayın.</p><label class="toggle"><input type="checkbox" id="auto-speak" checked> Yanıtları otomatik seslendir</label><p class="subtle">iPhone otomatik sesi engellerse “Yanıtı sesli dinle” düğmesine dokunun. Mikrofon için Safari ayarlarında izin gerekebilir.</p><button class="save-button" id="settings-save">Kaydet ve kapat</button></form></dialog>
+<script src="/voice.js"></script>
+</body></html>
